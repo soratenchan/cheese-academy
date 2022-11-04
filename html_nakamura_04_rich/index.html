@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <!-- 最初の設定は終わっています　必要な方は触ってください -->
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>チーズアカデミー</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <!-- slickのCSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"
+      integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"
+      integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <link href="./dist/output.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round|Material+Icons+Sharp|Material+Icons+Two+Tone"
+      rel="stylesheet"
+    />
+    <script
+      type="text/javascript"
+      src="http://use.typekit.com/qcc5ovd.js"
+    ></script>
+  </head>
+  <!-- 最初の設定は終わっています　必要な方は触ってください -->
+
+  <body id="mouse">
+    <!-- この中に記述していく -->
+    <!-- ここから下にコードを書く -->
+
+    <div class="flex flex-col relative dark:bg-dark-900">
+      <!-- TOPボタン -->
+      <div
+        class="z-10 fixed bottom-10 right-12 bg-opacity-70 dark:bg-dark-600 dark:text-gray-200 bg-yellow-300 p-5 text-centr rounded-md cursor-pointer"
+        id="top"
+      >
+        TOP
+      </div>
+      <!-- darkModeBtn -->
+      <div class="flex absolute top-1 left-1 cursor-pointer" id="darkMode">
+        <span class="material-icons text-yellow-300 dark:text-black">
+          light_mode
+        </span>
+      </div>
+      <!-- ヘッダー部分 -->
+      <div
+        class="flex flex-row px-10 py-5 bg-gray-100 justify-between bg-repeat"
+        style="background-image: url(img/cheese_header.jpg)"
+      >
+        <div class="flex flex-row items-center bg-yellow-300 bg-opacity-60">
+          <img class="" src="./img/header_logo.png" alt="" />
+        </div>
+        <div
+          class="flex flex-row space-x-12 sm:space-x-24 items-center text-xl cursor-pointer"
+        >
+          <p>
+            <button
+              class="py-2 px-3 rounded-md bg-white hover:bg-gray-100 border-2 border-black dark:bg-dark-700 dark:text-gray-200"
+            >
+              <a id="aboutTab">ABOUT</a>
+            </button>
+          </p>
+          <p>
+            <button
+              class="py-2 px-3 rounded-md bg-white hover:bg-gray-100 border-2 border-black dark:bg-dark-700 dark:text-gray-200"
+            >
+              <a id="courseTab">COURSE</a>
+            </button>
+          </p>
+          <p>
+            <button
+              class="py-2 px-3 rounded-md bg-white hover:bg-gray-100 border-2 border-black dark:bg-dark-700 dark:text-gray-200"
+            >
+              <a id="newsTab">NEWS</a>
+            </button>
+          </p>
+          <p>
+            <button
+              class="py-2 px-3 rounded-md bg-white hover:bg-gray-100 border-2 border-black dark:bg-dark-700 dark:text-gray-200"
+            >
+              <a id="accessTab">ACCESS</a>
+            </button>
+          </p>
+          <p>
+            <button
+              class="py-2 px-3 rounded-md bg-white hover:bg-gray-100 border-2 border-black dark:bg-dark-700 dark:text-gray-200"
+            >
+              <a id="contactTab">CONTACT</a>
+            </button>
+          </p>
+        </div>
+      </div>
+      <!-- メイン画像部分 -->
+      <div class="relative">
+        <img class="w-full" src="./img/mainbg.png" alt="" />
+        <div
+          class="flex items-center justify-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+        >
+          <div class="flex flex-col space-y-7 text-white dark:text-gray-700">
+            <p class="flex text-5xl font-bold justify-center" id="test">
+              セカイを変えるチーズを作ろう
+            </p>
+            <p class="text-3xl">チーズ職人養成学校「チーズアカデミーTOKYO」</p>
+          </div>
+        </div>
+      </div>
+      <!-- about -->
+      <div class="flex flex-col text-center pt-16" id="about">
+        <div class="flex items-center justify-center">
+          <button
+            class="flex items-center text-2xl font-bold justify-center py-2 px-3 rounded-md bg-white border-2 border-black dark:bg-dark-600 dark:text-gray-100"
+          >
+            <span class="material-icons pr-2">home</span>
+            ABOUT
+          </button>
+        </div>
+        <p class="text-lg pt-8 font-fancy dark:text-gray-200">
+          チームアカデミーについて
+        </p>
+        <p class="pt-16 dark:text-gray-200">
+          チーズアカデミーは、チーズ職人養成学校です。
+        </p>
+        <p class="pt-12 dark:text-gray-200">
+          チーズの素晴らしさを、自給自足を通じて、できるだけ多くの人に知っていただきたい。<br />
+          そして、食卓にはいつもチーズがあった、あの頃の当たり前をこの手で取り戻したい。
+        </p>
+        <p class="pt-8 dark:text-gray-200">
+          そんな思いから、チーズ職人養成学校「チーズアカデミーTOKYO」は歩みを始めています。
+        </p>
+        <p class="pt-8 dark:text-gray-200">
+          卒業後、チーズ自給自足のバックアップはもちろんのこと、<br />
+          チーズ職人への就職・転職もサポートします。
+        </p>
+        <!-- スライド写真にするところ -->
+        <div
+          class="flex flex-row pt-20 px-32 justify-center items-center"
+          id="slider"
+        >
+          <img class="w-1/4" src="./img/about_01.jpg" alt="" />
+          <img class="w-1/4" src="./img/about_02.jpg" alt="" />
+          <img class="w-1/4" src="./img/about_03.jpg" alt="" />
+          <img class="w-1/4" src="./img/about_04.jpg" alt="" />
+        </div>
+      </div>
+      <!-- course -->
+      <div class="flex flex-col pt-16" id="course">
+        <div class="flex flex-col text-center">
+          <div class="flex items-center justify-center">
+            <button
+              class="flex items-center text-2xl font-bold justify-center py-2 px-3 rounded-md bg-white border-2 border-black dark:bg-dark-600 dark:text-gray-100"
+            >
+              <span class="material-icons pr-2"> format_list_bulleted </span>
+              COURSE
+            </button>
+          </div>
+          <p class="pt-8 pb-16 dark:text-gray-200">
+            未経験からでもスタートができるよう、カリキュラムは多くの専門家や<br />
+            現役チーズ職人のアドバイスのもと、作られました。
+          </p>
+        </div>
+        <!-- コース写真 -->
+        <div class="flex flex-col">
+          <div
+            class="grid grid-cols-2 items-center bg-cheese-gray dark:bg-dark-800"
+          >
+            <img class="w-full object-fill" src="./img/course_01.jpg" alt="" />
+            <div
+              class="col-span-1 w-full pl-10 flex-col space-y-12 dark:text-gray-200"
+            >
+              <p class="text-xl font-bold">本格的な農園を使った実地研修</p>
+
+              <p class="text-md leading-loose">
+                チーズアカデミーでは、本格的な農園を使った実地研修を<br />
+                行うことができます。プロとして活躍するチーズ職人も<br />
+                使用するような、広大で環境も整った農園を余すところ<br />
+                なく使い、卒業時には本格的なチーズを自分の力で作れる<br />
+                実践力の養成を目指します。
+              </p>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 bg-cheese-gray dark:bg-dark-800">
+            <div
+              class="flex items-end justify-center col-span-1 flex-col pr-10"
+            >
+              <div class="flex flex-col space-y-12 dark:text-gray-200">
+                <div class="">
+                  <p class="text-xl font-bold">必要な知識もしっかりと取得</p>
+                </div>
+                <div class="text-md leading-loose">
+                  チーズ作りには、しっかりとした食に関する知識が<br />
+                  欠かせません。チーズアカデミーでは、一流講師陣による、<br />
+                  チーズ作りに必要ないろはを余すところなく学べます。<br />
+                  チーズそのものでなく、栄養学全般を学ぶことも<br />
+                  可能ですので、チーズ以外への展開も夢ではないでしょう。
+                </div>
+              </div>
+            </div>
+            <img class="w-full object-fill" src="./img/course_02.jpg" alt="" />
+          </div>
+          <div
+            class="grid grid-cols-2 items-center bg-cheese-gray dark:bg-dark-800"
+          >
+            <img class="w-full object-fill" src="./img/course_03.jpg" alt="" />
+            <div
+              class="col-span-1 w-full pl-10 flex-col space-y-12 dark:text-gray-200"
+            >
+              <p class="text-xl font-bold">卒業制作はティスティング審査あり</p>
+
+              <p class="text-md leading-loose">
+                チーズアカデミーでは最後の2ヶ月間で卒業制作を実施。<br />
+                卒業制作として、チーズ作りを実際に行います。卒業後、<br />
+                一般参加によるティスティング審査があるため、作り手の<br />
+                目線だけでなく、消費者の目線から、卒業制作作品としての<br />
+                チーズを、しっかりと評価いただくことができます。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- news -->
+      <div class="flex flex-col pt-16" id="news">
+        <div class="text-center">
+          <div class="flex items-center justify-center">
+            <button
+              class="flex items-center text-2xl font-bold justify-center py-2 px-3 rounded-md bg-white border-2 border-black dark:bg-dark-600 dark:text-gray-100"
+            >
+              <span class="material-icons pr-2">feed</span>
+              NEWS
+            </button>
+          </div>
+          <p class="text-lg pt-8 pb-16 dark:text-gray-200">ニュース</p>
+        </div>
+        <div
+          class="flex justify-center items-center flex-row space-x-6 dark:text-gray-200"
+        >
+          <div
+            class="w-[308.7px] flex flex-col transform transition duration-500 hover:scale-105"
+          >
+            <img class="" src="./img/news_img.jpg" alt="" />
+            <div class="flex flex-col items-start">
+              <p class="pt-8">2016/11/18</p>
+              <p
+                class="flex flex-wrap justify-start pt-6 text-sm leading-loose"
+              >
+                チーズアカデミー卒業生のコスゲさんによる
+                チーズだけをふんだんに使用した話題のピザ屋 「Kosuge
+                Pizza」が渋谷でオープンしました！
+              </p>
+            </div>
+          </div>
+          <div
+            class="w-[308.7px] flex flex-col transform transition duration-500 hover:scale-105"
+          >
+            <img class="" src="./img/news_img.jpg" alt="" />
+            <div class="flex flex-col items-start">
+              <p class="pt-8">2016/11/18</p>
+              <p
+                class="flex flex-wrap justify-start pt-6 text-sm leading-loose"
+              >
+                チーズアカデミー卒業生のコスゲさんによる
+                チーズだけをふんだんに使用した話題のピザ屋 「Kosuge
+                Pizza」が渋谷でオープンしました！
+              </p>
+            </div>
+          </div>
+          <div
+            class="w-[308.7px] flex flex-col transform transition duration-500 hover:scale-105"
+          >
+            <img class="" src="./img/news_img.jpg" alt="" />
+            <div class="flex flex-col items-start">
+              <p class="pt-8">2016/11/18</p>
+              <p
+                class="flex flex-wrap justify-start pt-6 text-sm leading-loose"
+              >
+                チーズアカデミー卒業生のコスゲさんによる
+                チーズだけをふんだんに使用した話題のピザ屋 「Kosuge
+                Pizza」が渋谷でオープンしました！
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-center py-16">
+          <div
+            class="flex justify-center items-center w-72 h-16 px-18 py2 rounded-md bg-yellow-300 hover:bg-yellow-400 transform transition duration-500 hover:scale-110"
+          >
+            <p class="text-white dark:text-dark-800 text-xl font-bold">MORE</p>
+          </div>
+        </div>
+      </div>
+      <!-- ACCESS -->
+      <div class="flex flex-col bg-cheese-gray dark:bg-dark-900" id="access">
+        <div class="text-center py-16">
+          <div class="flex items-center justify-center">
+            <button
+              class="flex items-center text-2xl font-bold justify-center py-2 px-3 rounded-md bg-white border-2 border-black dark:bg-dark-600 dark:text-gray-100"
+            >
+              <span class="material-icons pr-2">train</span>
+              ACCESS
+            </button>
+          </div>
+          <p class="text-lg pt-8 dark:text-gray-200">会社情報</p>
+        </div>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.3113002289288!2d139.7008082152002!3d35.66933613823173!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c9fa9e2e881%3A0x35396adb5ba7ce03!2z44K444O844K644Ki44Kr44OH44Of44O85p2x5Lqs!5e0!3m2!1sja!2sjp!4v1666534013351!5m2!1sja!2sjp"
+          width="full"
+          height="400"
+          style="filter: invert(90%)"
+          id="map"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+        <div
+          class="flex flex-row space-x-12 py-16 justify-center items-center pl-14 dark:text-gray-200"
+        >
+          <div class="flex flex-col space-y-8">
+            <p>学校名</p>
+            <p>事務所所在地</p>
+            <p>TEL</p>
+            <p>FAX</p>
+            <p>MAIL</p>
+          </div>
+          <div class="flex flex-col space-y-8">
+            <p>チーズアカデミーTOKYO</p>
+            <p>〒107-0061東京都港区北青山3-5-6 青朋ビル2F</p>
+            <p>03-5413-5045</p>
+            <p>03-5413-5046</p>
+            <p>dummy@cheeseacademy.tokyo</p>
+          </div>
+        </div>
+      </div>
+      <!-- CONTACT -->
+      <div class="flex flex-col" id="contact">
+        <div class="text-center pt-16 pb-16">
+          <div class="flex items-center justify-center">
+            <button
+              class="flex items-center text-2xl font-bold justify-center py-2 px-3 rounded-md bg-white border-2 border-black dark:bg-dark-600 dark:text-gray-100"
+            >
+              <span class="material-icons pr-2"> mark_as_unread </span>
+              CONTACT
+            </button>
+          </div>
+          <p class="text-lg pt-8 pb-16 dark:text-gray-200">
+            説明会お申し込み・お問い合わせ
+          </p>
+          <p class="dark:text-gray-200">
+            ぜひ1度、足を運んでみませんか。説明会は随時開催中。
+          </p>
+          <p class="pb-8 dark:text-gray-200">説明会お申し込み・お問い合わせ</p>
+          <p class="dark:text-gray-200">
+            ※チーズアカデミーは実際には存在しません。
+          </p>
+          <p class="dark:text-gray-200">
+            間違っても問い合わせしないようお願いいたします。
+          </p>
+        </div>
+
+        <div class="flex justify-center pt-8 pb-[140px]">
+          <div
+            class="flex justify-center items-center w-72 h-16 px-18 py2 rounded-md bg-yellow-300 hover:bg-yellow-400 transform transition duration-500 hover:scale-105"
+            id="openContactModal"
+          >
+            <p class="text-white dark:text-dark-800 text-lg font-bold">
+              お問い合わせ
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- footer -->
+      <div class="text-center bg-cheese-gray02" id="footer">
+        <p class="py-7 text-white">
+          >copyrights 2016 Cheeese Academy Tokyo All RIghts Reserved.
+        </p>
+      </div>
+    </div>
+
+    <!-- お問い合わせモーダル -->
+    <div
+      class="relative z-10 hidden"
+      aria-labelledby="modal-title"
+      role="dialog"
+      aria-modal="true"
+      id="modal"
+    >
+      <div
+        class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+        id="overRay"
+      ></div>
+
+      <div class="fixed inset-0 z-10 overflow-y-auto dark:bg-dark-900">
+        <div
+          class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0"
+        >
+          <div
+            class="relative transform overflow-hidden rounded-lg bg-white px-4 pt-5 pb-4 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg sm:p-6 dark:bg-dark-800"
+          >
+            <div
+              class="flex flex-col items-center justify-center space-y-6 w-full dark:text-gray-100"
+            >
+              <div
+                class="flex flex-row justify-between w-full dark:text-gray-200"
+              >
+                <div class="flex items-center text-sm">
+                  <p>名前</p>
+                </div>
+                <div class="flex justify-center w-2/3">
+                  <input
+                    type="text"
+                    class="h-10 bg-gray-50 dark:bg-dark-700 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                    placeholder="山田太郎"
+                    required
+                  />
+                </div>
+              </div>
+              <div
+                class="flex flex-row justify-between w-full dark:text-gray-200"
+              >
+                <div class="flex items-center text-sm">
+                  <p>カナ</p>
+                </div>
+                <div class="flex justify-center w-2/3">
+                  <input
+                    type="text"
+                    class="h-10 bg-gray-50 dark:bg-dark-700 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                    placeholder="ヤマダタロウ"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="flex flex-row justify-between w-full">
+                <div class="flex items-center text-sm">
+                  <p>メールアドレス</p>
+                </div>
+                <div class="flex justify-center w-2/3">
+                  <input
+                    type="text"
+                    class="h-10 bg-gray-50 dark:bg-dark-700 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                    placeholder="yamadatarou@cheese.com"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="flex flex-row justify-between w-full">
+                <div class="flex items-center text-sm">
+                  <p>
+                    チーズアカデミーを <br />
+                    知ったきっかけ
+                  </p>
+                </div>
+                <div class="flex justify-center w-2/3">
+                  <input
+                    type="text"
+                    class="h-10 bg-gray-50 dark:bg-dark-700 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                    placeholder=""
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="flex flex-row justify-between w-full">
+                <div class="flex items-start text-sm">
+                  <p>志望動機</p>
+                </div>
+                <div class="flex flex-col justify-center space-y-6 w-2/3">
+                  <div class="flex items-center">
+                    <input
+                      id="default-checkbox"
+                      type="checkbox"
+                      value=""
+                      class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                    />
+                    <label
+                      for="default-checkbox"
+                      class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-200"
+                      >起業をしたい</label
+                    >
+                  </div>
+
+                  <div class="flex items-center">
+                    <input
+                      id="default-checkbox"
+                      type="checkbox"
+                      value=""
+                      class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                    />
+                    <label
+                      for="default-checkbox"
+                      class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-200"
+                      >チーズ系企業に就職・転職したい</label
+                    >
+                  </div>
+                  <div class="flex items-center">
+                    <input
+                      id="default-checkbox"
+                      type="checkbox"
+                      value=""
+                      class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                    />
+                    <label
+                      for="default-checkbox"
+                      class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-200"
+                      >チーズと関わる仕事をしており、仕事に生かしたい
+                    </label>
+                  </div>
+                  <div class="flex items-center">
+                    <input
+                      id="default-checkbox"
+                      type="checkbox"
+                      value=""
+                      class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                    />
+                    <label
+                      for="default-checkbox"
+                      class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-200"
+                      >チーズの教養を身につけたい
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex flex-row justify-between w-full">
+                <div class="flex items-start text-sm">
+                  <p>詳細</p>
+                </div>
+                <div class="flex justify-center w-2/3">
+                  <textarea
+                    id="message"
+                    rows="6"
+                    class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 dark:bg-dark-700 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+                    placeholder=""
+                  ></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-row justify-end space-x-3">
+              <div class="flex pt-3">
+                <div
+                  class="flex justify-center items-center h-12 px-8 rounded-md bg-gray-300 hover:bg-gray-400 dark:bg-dark-850 dark:hover:bg-dark-900"
+                  id="closeModalBtn"
+                >
+                  <p class="text-black dark:text-gray-100 text-sm">
+                    キャンセル
+                  </p>
+                </div>
+              </div>
+              <div class="flex pt-3">
+                <div
+                  class="flex justify-center items-center h-12 px-8 rounded-md bg-yellow-300 hover:bg-yellow-400"
+                >
+                  <p class="text-white dark:text-dark-800 text-sm">送信</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ブロック崩しのやつ -->
+    <!-- <canvas class="bg-gray-100" id="myCanvas" width="480" height="320"></canvas> -->
+
+    <!-- ここから上にコードを書く -->
+    <!-- この中に記述していく -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script
+      type="text/javascript"
+      src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+    ></script>
+    <script src="js/main.js" type="module"></script>
+    <script></script>
+  </body>
+</html>
